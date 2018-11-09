@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Calculator</string>
+    <string name="calcMenu">Calculator Menu</string>
+    <string name="salesTCalc">Sales Tax Calculator Menu</string>
+</resources>

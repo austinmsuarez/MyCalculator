@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".GPACalc">
+
+    <TextView
+            android:text="GPA Calculator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:textSize="20sp" android:gravity="center_horizontal"/>
+    <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView
+                android:text="Course History    "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textSize="14sp" android:textStyle="bold"/>
+        <TextView
+                android:text="GPA: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        <TextView
+                android:id="@+id/gpaTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+    </LinearLayout>
+    <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="76dp"/>
+    <android.support.constraint.ConstraintLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+        <Button
+                android:text="Delete Last Class"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" android:id="@+id/deleteClassB"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/space" android:layout_marginEnd="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+        <Button
+                android:text="Add Class "
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:id="@+id/addClassB"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/space" app:layout_constraintBottom_toBottomOf="parent"/>
+        <Space
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="@+id/addClassB" app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp" android:id="@+id/space" app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginTop="16dp" app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="39dp"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="Course Name: "
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" android:textSize="14sp" android:textStyle="bold"
+                android:layout_marginTop="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/addClassB"/>
+        <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:ems="10"
+                android:id="@+id/courseNTV" android:hint="(ex. cpsc 101)"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="Grade: "
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp" android:textStyle="bold"/>
+        <Spinner
+                android:layout_width="0dp"
+                android:layout_height="24dp" android:id="@+id/gradeOps" android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <TextView
+                android:text="Credits:"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:textStyle="bold" android:textAlignment="center"/>
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/creditsTV" android:layout_weight="1"
+                android:hint="credit amount"/>
+    </LinearLayout>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:id="@+id/warning" android:textAlignment="center"
+            android:textSize="20sp"/>
+</LinearLayout>
