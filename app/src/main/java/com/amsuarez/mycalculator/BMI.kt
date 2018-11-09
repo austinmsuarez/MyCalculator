@@ -21,7 +21,7 @@ class BMI : AppCompatActivity() {
                 if(inches.visibility == View.VISIBLE){
                     if(weight.text.toString() != "" && heightUser.text.toString() != "" && inches.text.toString() != ""){
                         val heightConvert = (heightUser.text.toString().toDouble()*12)+ inches.text.toString().toDouble()
-                        result.text = "%.1f".format((703*weight.text.toString().toInt()/  (heightConvert * heightConvert)))
+                        result.text = "%.1f".format((703*weight.text.toString().toDouble()/  (heightConvert * heightConvert)))
                         changeTextColor(result.text.toString().toFloat())
 
                     }
@@ -32,7 +32,7 @@ class BMI : AppCompatActivity() {
                 else{
                     if(weight.text.toString() != "" && heightUser.text.toString() != "") {
                         val heightConvert = (heightUser.text.toString().toDouble() * heightUser.text.toString().toDouble())/100
-                        result.text ="%.1f".format((weight.text.toString().toInt() / heightConvert)*100)
+                        result.text ="%.1f".format((weight.text.toString().toDouble() / heightConvert)*100)
                         changeTextColor(result.text.toString().toFloat())
                     }
                     else{
